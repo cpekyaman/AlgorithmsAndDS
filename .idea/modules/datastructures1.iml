@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="datastructures1" external.linked.project.path="$MODULE_DIR$/../../AlgorithmsAndDataStructures1" external.root.project.path="$MODULE_DIR$/../../AlgorithmsAndDataStructures1" external.system.id="GRADLE" external.system.module.group="udemy" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/build/classes/main" />
-    <output-test url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/build/classes/test" />
+    <output url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/out/test/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1">
       <sourceFolder url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/src/main/java" isTestSource="false" />
@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../AlgorithmsAndDataStructures1/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
