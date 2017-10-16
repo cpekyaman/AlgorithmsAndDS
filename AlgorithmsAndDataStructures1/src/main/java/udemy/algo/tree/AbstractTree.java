@@ -3,7 +3,7 @@ package udemy.algo.tree;
 import java.util.function.Consumer;
 
 public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T, E>> implements Tree<T> {
-    private E root;
+    protected E root;
 
     @Override
     public void traverse(Consumer<T> c) {
@@ -44,7 +44,7 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
             }
         }
 
-        return checkSubtree(current, data);
+        return adjustSubTree(current, data);
     }
 
     @Override
@@ -54,7 +54,7 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
 
     protected abstract E createNode(T data);
 
-    protected abstract E checkSubtree(E currentNode, T data);
+    protected abstract E adjustSubTree(E currentNode, T data);
 
     private E insert(E currentNode, T data) {
         if(currentNode == null) {
@@ -65,7 +65,7 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
             currentNode.setRight(insert(currentNode.getRight(), data));
         }
 
-        return checkSubtree(currentNode, data);
+        return adjustSubTree(currentNode, data);
     }
 
     private void inOrderTraversal(E root, Consumer<T> c) {

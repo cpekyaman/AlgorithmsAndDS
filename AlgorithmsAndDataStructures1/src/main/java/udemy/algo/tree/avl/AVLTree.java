@@ -16,7 +16,7 @@ public class AVLTree<T extends Comparable<T>> extends AbstractTree<T, AVLNode<T>
     }
 
     @Override
-    protected AVLNode<T> checkSubtree(AVLNode<T> currentNode, T data) {
+    protected AVLNode<T> adjustSubTree(AVLNode<T> currentNode, T data) {
         currentNode.calculateHeight();
         int balance = getBalance(currentNode);
 
