@@ -12,4 +12,6 @@ public interface Tree<T extends Comparable<T>> {
     T getMax();
 
     T getMin();
+
+    boolean isEmpty();
 }

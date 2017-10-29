@@ -72,7 +72,7 @@ public class RedBlackTree<T extends Comparable<T>> extends AbstractTree<T, RedBl
         newRoot.setLeft(node);
         node.setRight(toBeRight);
 
-
+        //TODO: implement
 
         return newRoot;
     }

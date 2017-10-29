@@ -48,6 +48,11 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
     }
 
     @Override
+    public boolean isEmpty() {
+        return this.root == null;
+    }
+
+    @Override
     public void insert(T data) {
         root = insert(root, data);
     }
@@ -82,7 +87,7 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
 
     @Override
     public T getMax() {
-        if(root == null) {
+        if(isEmpty()) {
             return null;
         }
         return findRightMost(root).getData();
@@ -97,7 +102,7 @@ public abstract class AbstractTree<T extends Comparable<T>, E extends TreeNode<T
 
     @Override
     public T getMin() {
-        if(root == null) {
+        if(isEmpty()) {
             return null;
         }
         return findLeftMost(root).getData();
