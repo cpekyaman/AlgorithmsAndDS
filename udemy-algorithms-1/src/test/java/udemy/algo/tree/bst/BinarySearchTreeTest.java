@@ -1,7 +1,7 @@
 package udemy.algo.tree.bst;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.tree.Tree;
 
 import java.util.Collections;
@@ -15,7 +15,7 @@ public class BinarySearchTreeTest {
 
     private Consumer<Integer> intPrinter;
 
-    @Before
+    @BeforeEach
     public void setup() {
         intPrinter = i -> System.out.printf("%d ", i);
     }

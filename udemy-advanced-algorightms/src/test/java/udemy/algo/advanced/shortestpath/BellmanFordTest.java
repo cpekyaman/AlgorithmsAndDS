@@ -1,7 +1,7 @@
 package udemy.algo.advanced.shortestpath;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.advanced.shortestpath.graph.SPEdge;
 import udemy.algo.advanced.shortestpath.graph.SPVertex;
 
@@ -13,7 +13,7 @@ public class BellmanFordTest {
 
     private List<SPVertex> vertices;
 
-    @Before
+    @BeforeEach
     public void setup() {
         vertices = new ArrayList<>();
         vertices.add(new SPVertex("A"));

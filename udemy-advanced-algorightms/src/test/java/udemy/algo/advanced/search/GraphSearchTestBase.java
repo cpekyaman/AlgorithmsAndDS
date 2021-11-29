@@ -1,12 +1,12 @@
 package udemy.algo.advanced.search;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import udemy.algo.advanced.graph.GraphVertex;
 
 public abstract class GraphSearchTestBase {
     protected GraphVertex<Integer> root;
 
-    @Before
+    @BeforeEach
     public void setupBase() {
         root = new GraphVertex<>(1);
 

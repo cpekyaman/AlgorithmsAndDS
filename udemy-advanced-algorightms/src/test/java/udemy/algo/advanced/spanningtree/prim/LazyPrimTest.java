@@ -1,7 +1,7 @@
 package udemy.algo.advanced.spanningtree.prim;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.advanced.spanningtree.common.STEdge;
 
 import java.util.HashSet;
@@ -12,7 +12,7 @@ public class LazyPrimTest {
     private Set<LazyPrimVertex> vertices;
     private LazyPrimVertex startVertex;
 
-    @Before
+    @BeforeEach
     public void setup() {
         vertices = new HashSet<>();
 

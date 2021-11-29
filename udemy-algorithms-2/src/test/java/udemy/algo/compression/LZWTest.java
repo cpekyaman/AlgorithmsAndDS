@@ -1,14 +1,14 @@
 package udemy.algo.compression;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 public class LZWTest {
     private LZW lzw;
 
-    @Before
+    @BeforeEach
     public void setup() {
         lzw = new LZW();
     }

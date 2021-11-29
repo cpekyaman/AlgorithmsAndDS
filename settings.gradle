@@ -3,3 +3,5 @@ rootProject.name = 'algorithms-and-datastructures'
 include 'udemy-algorithms-1'
 include 'udemy-algorithms-2'
 include 'udemy-advanced-algorightms'
+include 'grokking-algorithms'
+

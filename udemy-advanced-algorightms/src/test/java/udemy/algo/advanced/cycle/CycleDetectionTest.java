@@ -1,7 +1,7 @@
 package udemy.algo.advanced.cycle;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,7 +11,7 @@ public class CycleDetectionTest {
     private CycleDetection cycleDetection;
     private List<CycleVertex<Integer>> vertices;
 
-    @Before
+    @BeforeEach
     public void setup() {
         vertices = IntStream.rangeClosed(1, 6).boxed().map(CycleVertex::new).collect(Collectors.toList());
         System.out.println(vertices);

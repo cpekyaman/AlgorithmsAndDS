@@ -1,7 +1,7 @@
 package udemy.algo.tree.avl;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.tree.Tree;
 
 import java.util.function.Consumer;
@@ -11,7 +11,7 @@ public class AVLTreeTest {
     private Tree<Integer> tree;
     private Consumer<Integer> intPrinter;
 
-    @Before
+    @BeforeEach
     public void setup() {
         tree = new AVLTree<>();
         intPrinter = i -> System.out.printf("%d ", i);

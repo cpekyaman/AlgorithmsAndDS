@@ -1,12 +1,12 @@
 package udemy.algo.advanced.tsp;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class SimulatedAnnealingTest {
     private SimulatedAnnealing tsp;
 
-    @Before
+    @BeforeEach
     public void setup() {
         CityRegistry registry = new CityRegistry();
         registry.generate(500);

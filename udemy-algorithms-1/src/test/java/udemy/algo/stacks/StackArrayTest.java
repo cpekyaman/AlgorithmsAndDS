@@ -1,23 +1,24 @@
 package udemy.algo.stacks;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by raistlin on 9/24/2017.
  */
-public class StackArrayTest {
+public class StackArrayTest extends Assertions {
     @Test
     public void testStack() {
         StackArray<Integer> stack = new StackArray<>();
         stack.push(5);
         stack.push(12);
         stack.push(22);
-        Assert.assertSame(3, stack.size());
 
-        Assert.assertSame(22, stack.peek());
+        assertThat(stack.size()).isEqualTo(3);
 
-        Assert.assertSame(22, stack.pop());
-        Assert.assertSame(2, stack.size());
+        assertThat(stack.peek()).isEqualTo(22);
+
+        assertThat(stack.pop()).isEqualTo(22);
+        assertThat(stack.size()).isEqualTo(2);
     }
 }

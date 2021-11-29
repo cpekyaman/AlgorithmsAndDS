@@ -1,12 +1,12 @@
 package udemy.algo.advanced.spanningtree.kruskal;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class KruskalTest {
     private Kruskal kruskal;
 
-    @Before
+    @BeforeEach
     public void setup() {
         this.kruskal = new Kruskal();
     }

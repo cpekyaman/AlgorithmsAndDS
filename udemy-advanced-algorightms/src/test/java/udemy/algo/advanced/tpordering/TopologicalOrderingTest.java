@@ -1,7 +1,7 @@
 package udemy.algo.advanced.tpordering;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.advanced.graph.GraphVertex;
 
 import java.util.List;
@@ -13,7 +13,7 @@ public class TopologicalOrderingTest  {
     private TopologicalOrdering<Integer> tp;
     private List<GraphVertex<Integer>> vertices;
 
-    @Before
+    @BeforeEach
     public void setup() {
         tp = new TopologicalOrdering<>();
 

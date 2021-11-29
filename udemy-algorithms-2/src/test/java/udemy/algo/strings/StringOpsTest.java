@@ -1,13 +1,13 @@
 package udemy.algo.strings;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class StringOpsTest extends Assertions {
     private StringOps ops;
 
-    @Before
+    @BeforeEach
     public void setup() {
         ops = new StringOps();
     }

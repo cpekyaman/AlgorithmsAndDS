@@ -1,13 +1,13 @@
 package udemy.algo.tst;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TSTTest extends Assertions {
     private TST tst;
 
-    @Before
+    @BeforeEach
     public void setup() {
         tst = new TST();
     }

@@ -1,13 +1,13 @@
 package udemy.algo.substring;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BoyerMooreTest extends Assertions {
     private BoyerMoore bm;
 
-    @Before
+    @BeforeEach
     public void setup() {
         bm = new BoyerMoore();
     }

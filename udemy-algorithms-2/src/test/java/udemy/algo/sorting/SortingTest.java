@@ -1,6 +1,6 @@
 package udemy.algo.sorting;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static udemy.algo.sorting.SortTestUtils.randomArray10;
 import static udemy.algo.sorting.SortTestUtils.randomArray20;

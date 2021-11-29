@@ -1,8 +1,8 @@
 package udemy.algo.hashtable;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Hashtable;
 
@@ -10,7 +10,7 @@ public class HashTableTest extends Assertions {
 
     private Hashtable<String, Integer> table;
 
-    @Before
+    @BeforeEach
     public void setup() {
         table = new Hashtable<>(20);
     }

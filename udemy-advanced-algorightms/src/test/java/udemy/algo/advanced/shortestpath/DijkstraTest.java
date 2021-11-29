@@ -1,7 +1,7 @@
 package udemy.algo.advanced.shortestpath;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import udemy.algo.advanced.shortestpath.graph.SPEdge;
 import udemy.algo.advanced.shortestpath.graph.SPVertex;
 
@@ -11,7 +11,7 @@ public class DijkstraTest {
     private SPVertex source;
     private SPVertex target;
 
-    @Before
+    @BeforeEach
     public void setup() {
         spa = new Dijkstra();
 

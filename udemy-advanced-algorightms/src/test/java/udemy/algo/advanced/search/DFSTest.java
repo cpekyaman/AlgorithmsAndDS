@@ -1,12 +1,12 @@
 package udemy.algo.advanced.search;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DFSTest extends GraphSearchTestBase {
     private DFS<Integer> dfs;
 
-    @Before
+    @BeforeEach
     public void setup() {
         dfs = new DFS<>();
     }

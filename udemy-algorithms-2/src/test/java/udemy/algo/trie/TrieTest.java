@@ -1,15 +1,15 @@
 package udemy.algo.trie;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 public class TrieTest extends Assertions {
     private Trie trie;
 
-    @Before
+    @BeforeEach
     public void setup() {
         trie = new Trie();
     }
