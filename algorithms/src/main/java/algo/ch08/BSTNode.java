@@ -1,12 +1,12 @@
 package algo.ch08;
 
-public final class TreeNode<K extends Comparable<K>, V> {
+public final class BSTNode<K extends Comparable<K>, V> {
     private final K key;
     private V value;
-    private TreeNode<K, V> left, right;
+    private BSTNode<K, V> left, right;
     private int treeSize;
 
-    public TreeNode(K key, V value) {
+    public BSTNode(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -23,19 +23,19 @@ public final class TreeNode<K extends Comparable<K>, V> {
         this.value = value;
     }
 
-    public TreeNode<K, V> getLeft() {
+    public BSTNode<K, V> getLeft() {
         return left;
     }
 
-    public TreeNode<K, V> getRight() {
+    public BSTNode<K, V> getRight() {
         return right;
     }
 
-    public void setLeft(TreeNode<K, V> left) {
+    public void setLeft(BSTNode<K, V> left) {
         this.left = left;
     }
 
-    public void setRight(TreeNode<K, V> right) {
+    public void setRight(BSTNode<K, V> right) {
         this.right = right;
     }
 
@@ -43,7 +43,7 @@ public final class TreeNode<K extends Comparable<K>, V> {
         this.treeSize = 1 + size(this.left) + size(this.right);
     }
 
-    private int size(TreeNode<K, V> subtree) {
+    private int size(BSTNode<K, V> subtree) {
         if(subtree == null) {
             return 0;
         }

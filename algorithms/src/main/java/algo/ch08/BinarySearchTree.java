@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public final class BinarySearchTree<K extends Comparable<K>, V> {
-    private TreeNode<K, V> root;
+    private BSTNode<K, V> root;
 
     public void delete(K key) {
         root = delete(key, root);
     }
 
-    private TreeNode<K, V> delete(K key, TreeNode<K, V> current) {
+    private BSTNode<K, V> delete(K key, BSTNode<K, V> current) {
         if(current == null) {
             return null;
         }
@@ -25,7 +25,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
                 return current.getLeft();
             }
 
-            TreeNode<K, V> successor = min(current.getRight());
+            BSTNode<K, V> successor = min(current.getRight());
             successor.setRight(deleteMin(current.getRight()));
             successor.setLeft(current.getLeft());
             successor.updateSize();
@@ -40,7 +40,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         root = deleteMin(root);
     }
 
-    private TreeNode<K, V> deleteMin(TreeNode<K, V> current) {
+    private BSTNode<K, V> deleteMin(BSTNode<K, V> current) {
         if(current.getLeft() == null) {
             return current.getRight();
         }
@@ -53,7 +53,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return max(root);
     }
 
-    private V max(TreeNode<K, V> current) {
+    private V max(BSTNode<K, V> current) {
         if(current.getRight() == null) {
             return current.getValue();
         }
@@ -64,7 +64,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return min(root).getValue();
     }
 
-    private TreeNode<K, V> min(TreeNode<K, V> current) {
+    private BSTNode<K, V> min(BSTNode<K, V> current) {
         if(current.getLeft() == null) {
             return current;
         }
@@ -77,7 +77,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return keys;
     }
 
-    private void traverse(TreeNode<K, V> node, Queue<K> keys) {
+    private void traverse(BSTNode<K, V> node, Queue<K> keys) {
         if(node == null) {
             return;
         }
@@ -91,7 +91,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return rank(key, root);
     }
 
-    private int rank(K key, TreeNode<K, V> current) {
+    private int rank(K key, BSTNode<K, V> current) {
         if(current == null) {
             return 0;
         }
@@ -106,7 +106,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         }
     }
 
-    private int treeSize(TreeNode<K, V> node) {
+    private int treeSize(BSTNode<K, V> node) {
         return node == null ? 0 : node.getTreeSize();
     }
 
@@ -114,7 +114,7 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return get(key, root);
     }
 
-    private V get(K key, TreeNode<K, V> current) {
+    private V get(K key, BSTNode<K, V> current) {
         if(current == null) {
             return null;
         }
@@ -132,9 +132,9 @@ public final class BinarySearchTree<K extends Comparable<K>, V> {
         return this;
     }
 
-    private TreeNode<K, V> insert(K key, V value, TreeNode<K, V> current) {
+    private BSTNode<K, V> insert(K key, V value, BSTNode<K, V> current) {
         if(current == null) {
-            return new TreeNode<>(key, value);
+            return new BSTNode<>(key, value);
         }
 
         int keyComp = key.compareTo(current.getKey());
