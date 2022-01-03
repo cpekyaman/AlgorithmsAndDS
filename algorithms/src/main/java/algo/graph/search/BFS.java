@@ -1,7 +1,7 @@
-package algo.ch11.search;
+package algo.graph.search;
 
-import algo.ch11.Edge;
 import algo.ch11.Graph;
+import algo.graph.Edge;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,7 +22,7 @@ public final class BFS extends GraphSearchImpl {
             Integer vertex = bfsQueue.remove();
 
             for(Edge adj : graph.adjacents(vertex)) {
-                Integer target = adj.getTarget().getId();
+                Integer target = adj.getTo().getId();
                 if(! visited.contains(target)) {
                     bfsQueue.offer(target);
                     visited.add(target);

@@ -1,21 +1,26 @@
-package algo.ch11;
+package algo.graph.search;
 
-import algo.ch11.search.DFS;
-import algo.ch11.search.GraphSearch;
+import algo.ch11.Graph;
+import algo.graph.Edge;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class GraphSearchManager {
     private final Graph graph;
     private final Map<Integer, GraphSearch> searches;
+    private final SearchCreator sc;
 
-    public GraphSearchManager(Graph graph) {
+    public GraphSearchManager(Graph graph, SearchCreator sc) {
         this.graph = graph;
         this.searches = new HashMap<>();
+        this.sc = sc;
     }
 
     public boolean isConnected(Integer from, Integer to) {
-        GraphSearch dfs = this.searches.computeIfAbsent(from, v -> new DFS(graph, from));
+        GraphSearch dfs = this.searches.computeIfAbsent(from, v -> sc.create(graph, v));
         return dfs.hasConnection(to);
     }
 

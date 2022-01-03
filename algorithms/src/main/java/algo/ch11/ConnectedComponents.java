@@ -1,5 +1,8 @@
 package algo.ch11;
 
+import algo.graph.Edge;
+import algo.graph.Vertex;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -38,7 +41,7 @@ public final class ConnectedComponents {
         componentIds.put(v, componentId);
 
         for(Edge edge : graph.adjacents(v)) {
-            Integer target = edge.getTarget().getId();
+            Integer target = edge.getTo().getId();
             if(! visited.contains(target)) {
                 dfs(target, componentId);
             }

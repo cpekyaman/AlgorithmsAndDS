@@ -1,6 +1,6 @@
-package algo.ch11.search;
+package algo.graph.search;
 
-import algo.ch11.Edge;
+import algo.graph.Edge;
 import algo.ch11.Graph;
 
 import java.util.*;
@@ -32,7 +32,7 @@ abstract class GraphSearchImpl implements GraphSearch {
         }
         Edge edge = connections.get(currentV);
         path.add(edge);
-        fillPath(path, edge.getSource().getId());
+        fillPath(path, edge.getFrom().getId());
     }
 
     @Override

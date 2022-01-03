@@ -1,5 +1,9 @@
 package algo.ch11;
 
+import algo.graph.Edge;
+import algo.graph.Vertex;
+import algo.graph.search.DFS;
+import algo.graph.search.GraphSearchManager;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,7 +23,7 @@ class GraphSearchTest extends Assertions {
     @Test
     void shouldReturnPathIfThereIsAConnectionBetweenVertices() {
         // given
-        GraphSearchManager gs = new GraphSearchManager(graph);
+        GraphSearchManager gs = new GraphSearchManager(graph, DFS::new);
 
         // when
         List<Edge> path = gs.path(1, 3);
@@ -34,7 +38,7 @@ class GraphSearchTest extends Assertions {
     @Test
     void shouldNotReturnPathIfThereIsNoConnectionBetweenVertices() {
         // given
-        GraphSearchManager gs = new GraphSearchManager(graph);
+        GraphSearchManager gs = new GraphSearchManager(graph, DFS::new);
 
         // when
         List<Edge> path = gs.path(6, 12);

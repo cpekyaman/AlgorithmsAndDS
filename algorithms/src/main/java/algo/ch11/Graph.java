@@ -1,41 +1,26 @@
 package algo.ch11;
 
+import algo.graph.BaseGraph;
+import algo.graph.Edge;
+import algo.graph.Vertex;
+
 import java.util.*;
 
-public final class Graph {
-    private final Vertex[] vertices;
+public final class Graph extends BaseGraph {
 
     public Graph(int vCap) {
-        this.vertices = new Vertex[vCap];
+        super(vCap);
     }
 
-    public int size() {
-        return vertices.length;
-    }
-
-    public Vertex[] vertices() {
-        return this.vertices;
-    }
-
-    public Graph addEdge(int v, int w) {
+    @Override
+    public Graph addEdge(Integer v, Integer w) {
         Vertex vv = getOrCreate(v);
         Vertex wv = getOrCreate(w);
+
+        // making the graph undirected with these
         vv.addEdge(wv);
         wv.addEdge(vv);
+
         return this;
-    }
-
-    private Vertex getOrCreate(int v) {
-        if(vertices[v] == null) {
-            vertices[v] = new Vertex(v);
-        }
-        return vertices[v];
-    }
-
-    public List<Edge> adjacents(int v) {
-        if(vertices[v] != null) {
-            return vertices[v].getEdges();
-        }
-        return Collections.emptyList();
     }
 }

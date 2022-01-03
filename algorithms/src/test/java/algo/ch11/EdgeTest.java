@@ -1,5 +1,7 @@
 package algo.ch11;
 
+import algo.graph.Edge;
+import algo.graph.Vertex;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

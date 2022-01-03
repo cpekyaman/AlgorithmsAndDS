@@ -1,6 +1,6 @@
-package algo.ch11.search;
+package algo.graph.search;
 
-import algo.ch11.Edge;
+import algo.graph.Edge;
 
 import java.util.List;
 

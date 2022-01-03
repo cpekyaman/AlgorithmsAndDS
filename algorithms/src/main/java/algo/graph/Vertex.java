@@ -1,4 +1,4 @@
-package algo.ch11;
+package algo.graph;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -17,12 +17,12 @@ public final class Vertex {
         return id;
     }
 
-    List<Edge> getEdges() {
+    public List<Edge> getEdges() {
         return edges;
     }
 
-    Vertex addEdge(Vertex target) {
-        this.edges.add(new Edge(this, target));
+    public Vertex addEdge(Vertex to) {
+        this.edges.add(new Edge(this, to));
         return this;
     }
 

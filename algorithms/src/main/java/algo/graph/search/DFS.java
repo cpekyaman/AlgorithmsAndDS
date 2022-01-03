@@ -1,6 +1,6 @@
-package algo.ch11.search;
+package algo.graph.search;
 
-import algo.ch11.Edge;
+import algo.graph.Edge;
 import algo.ch11.Graph;
 
 public final class DFS extends GraphSearchImpl {
@@ -13,7 +13,7 @@ public final class DFS extends GraphSearchImpl {
         visited.add(v);
 
         for(Edge adj : graph.adjacents(v)) {
-            Integer vertexId = adj.getTarget().getId();
+            Integer vertexId = adj.getTo().getId();
             if(! visited.contains(vertexId)) {
                 findConnected(vertexId);
                 connections.put(vertexId, adj);
