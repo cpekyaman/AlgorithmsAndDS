@@ -1,7 +1,6 @@
 package algo.graph.search;
 
-import algo.ch11.Graph;
-import algo.ch11.GraphUtil;
+import algo.graph.GraphUtil;
 import algo.ch12.Digraph;
 import algo.graph.Edge;
 import algo.graph.Vertex;

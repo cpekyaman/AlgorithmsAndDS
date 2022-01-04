@@ -1,0 +1,60 @@
+package algo.graph;
+
+import algo.graph.BaseGraph;
+
+public final class GraphUtil {
+
+    public static <T extends BaseGraph> T testGraph(T graph) {
+        graph.addEdge(0, 1)
+             .addEdge(0, 2)
+             .addEdge(0, 6);
+
+        graph.addEdge(6, 4);
+
+        graph.addEdge(4, 5)
+             .addEdge(4, 3);
+
+        graph.addEdge(5, 3)
+             .addEdge(5, 0);
+
+        graph.addEdge(7, 8);
+
+        graph.addEdge(9, 10)
+             .addEdge(9, 11)
+             .addEdge(9, 12);
+
+        graph.addEdge(11, 12);
+
+        return graph;
+    }
+
+    public static <T extends BaseGraph> T weightedTestGraph(T graph) {
+        graph.addEdge(0, 7, 16)
+             .addEdge(0, 4, 38)
+             .addEdge(0, 2, 26);
+
+
+        graph.addEdge(1, 7, 19)
+             .addEdge(1, 3, 29)
+             .addEdge(1, 5, 32)
+             .addEdge(1, 2, 36);
+
+        graph.addEdge(2, 3, 17)
+             .addEdge(2, 7, 34);
+
+        graph.addEdge(3, 6, 52);
+
+        graph.addEdge(4, 5, 35)
+             .addEdge(4, 7, 37);
+
+        graph.addEdge(5, 7, 28);
+
+        graph.addEdge(6, 2, 40)
+             .addEdge(6, 0, 58)
+             .addEdge(6, 4, 93);
+
+        return graph;
+    }
+
+    private GraphUtil() {}
+}

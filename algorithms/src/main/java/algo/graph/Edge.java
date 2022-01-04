@@ -32,7 +32,11 @@ public final class Edge implements Comparable<Edge> {
         return weight;
     }
 
-    public Vertex otherV(Vertex me) {
+    public Vertex other(Integer me) {
+        return me.equals(V.getId()) ? W : V;
+    }
+
+    public Vertex other(Vertex me) {
         return me.equals(V) ? W : V;
     }
 

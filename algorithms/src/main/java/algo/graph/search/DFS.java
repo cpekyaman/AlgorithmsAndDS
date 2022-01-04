@@ -14,7 +14,7 @@ public final class DFS extends GraphSearchImpl {
         visited.add(v.getId());
 
         for(Edge adj : graph.adjacents(v.getId())) {
-            Vertex other = adj.otherV(v);
+            Vertex other = adj.other(v);
             if(! visited.contains(other.getId())) {
                 findConnected(other);
                 connections.put(other.getId(), adj);

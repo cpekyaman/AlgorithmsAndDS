@@ -2,7 +2,6 @@ package algo.graph.search;
 
 import algo.graph.BaseGraph;
 import algo.graph.Edge;
-import algo.ch11.Graph;
 import algo.graph.Vertex;
 
 import java.util.*;
@@ -34,7 +33,7 @@ abstract class GraphSearchImpl implements GraphSearch {
         }
         Edge edge = connections.get(currentV.getId());
         path.add(edge);
-        fillPath(path, edge.otherV(currentV));
+        fillPath(path, edge.other(currentV));
     }
 
     @Override
