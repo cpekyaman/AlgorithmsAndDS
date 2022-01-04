@@ -1,24 +1,23 @@
-package algo.ch11;
+package algo.graph.search;
 
+import algo.ch11.Graph;
+import algo.ch11.GraphUtil;
+import algo.ch12.Digraph;
 import algo.graph.Edge;
 import algo.graph.Vertex;
-import algo.graph.search.DFS;
-import algo.graph.search.GraphSearchManager;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class GraphSearchTest extends Assertions {
-
-    private Graph graph;
+class DigraphSearchTest extends Assertions {
+    private Digraph graph;
 
     @BeforeEach
     void setUp() {
-        graph = GraphUtil.testGraph();
+        graph = GraphUtil.testGraph(new Digraph());
     }
-
 
     @Test
     void shouldReturnPathIfThereIsAConnectionBetweenVertices() {
@@ -26,13 +25,12 @@ class GraphSearchTest extends Assertions {
         GraphSearchManager gs = new GraphSearchManager(graph, DFS::new);
 
         // when
-        List<Edge> path = gs.path(1, 3);
+        List<Edge> path = gs.path(0, 3);
 
         // then
         assertThat(path).contains(
                 new Edge(new Vertex(5), new Vertex(3)),
-                new Edge(new Vertex(6), new Vertex(4)),
-                new Edge(new Vertex(1), new Vertex(0)));
+                new Edge(new Vertex(6), new Vertex(4)));
     }
 
     @Test

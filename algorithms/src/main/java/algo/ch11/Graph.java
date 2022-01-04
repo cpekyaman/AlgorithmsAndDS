@@ -7,19 +7,15 @@ import algo.graph.Vertex;
 import java.util.*;
 
 public final class Graph extends BaseGraph {
-
-    public Graph(int vCap) {
-        super(vCap);
-    }
-
     @Override
-    public Graph addEdge(Integer v, Integer w) {
+    public Graph addEdge(Integer v, Integer w, int weight) {
         Vertex vv = getOrCreate(v);
         Vertex wv = getOrCreate(w);
 
-        // making the graph undirected with these
-        vv.addEdge(wv);
-        wv.addEdge(vv);
+        // adding same edge on both sides to have undirected semantics
+        Edge edge = new Edge(vv, wv, weight);
+        vv.addEdge(edge);
+        wv.addEdge(edge);
 
         return this;
     }

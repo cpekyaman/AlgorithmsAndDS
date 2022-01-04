@@ -1,22 +1,23 @@
 package algo.graph.search;
 
+import algo.graph.BaseGraph;
 import algo.graph.Edge;
-import algo.ch11.Graph;
+import algo.graph.Vertex;
 
 public final class DFS extends GraphSearchImpl {
-    public DFS(Graph graph, Integer from) {
+    public DFS(BaseGraph graph, Integer from) {
         super(graph, from);
-        this.findConnected(from);
+        this.findConnected(this.from);
     }
 
-    private void findConnected(Integer v) {
-        visited.add(v);
+    private void findConnected(Vertex v) {
+        visited.add(v.getId());
 
-        for(Edge adj : graph.adjacents(v)) {
-            Integer vertexId = adj.getTo().getId();
-            if(! visited.contains(vertexId)) {
-                findConnected(vertexId);
-                connections.put(vertexId, adj);
+        for(Edge adj : graph.adjacents(v.getId())) {
+            Vertex other = adj.otherV(v);
+            if(! visited.contains(other.getId())) {
+                findConnected(other);
+                connections.put(other.getId(), adj);
             }
         }
     }

@@ -5,8 +5,8 @@ import java.util.*;
 public abstract class BaseGraph {
     private final Map<Integer, Vertex> vertices;
 
-    protected BaseGraph(int vCap) {
-        this.vertices = new HashMap<>(vCap);
+    protected BaseGraph() {
+        this.vertices = new HashMap<>();
     }
 
     public int size() {
@@ -17,7 +17,15 @@ public abstract class BaseGraph {
         return this.vertices.values();
     }
 
-    public abstract BaseGraph addEdge(Integer v, Integer w);
+    public Vertex vertexOf(Integer id) {
+        return vertices.get(id);
+    }
+
+    public BaseGraph addEdge(Integer v, Integer w) {
+        return addEdge(v, w, 1);
+    }
+
+    public abstract BaseGraph addEdge(Integer v, Integer w, int weight);
 
     protected Vertex getOrCreate(Integer v) {
         return vertices.computeIfAbsent(v, Vertex::new);

@@ -1,8 +1,8 @@
 package algo.graph.search;
 
-import algo.ch11.Graph;
+import algo.graph.BaseGraph;
 
 @FunctionalInterface
 public interface SearchCreator {
-    GraphSearch create(Graph graph, Integer from);
+    GraphSearch create(BaseGraph graph, Integer from);
 }

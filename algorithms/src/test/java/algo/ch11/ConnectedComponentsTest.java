@@ -9,7 +9,7 @@ class ConnectedComponentsTest extends Assertions {
 
     @BeforeEach
     void setUp() {
-        this.graph = GraphUtil.testGraph();
+        this.graph = GraphUtil.testGraph(new Graph());
     }
 
     @Test

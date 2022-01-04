@@ -1,10 +1,10 @@
 package algo.ch11;
 
+import algo.graph.BaseGraph;
+
 public final class GraphUtil {
 
-    public static Graph testGraph() {
-        Graph graph = new Graph(13);
-
+    public static <T extends BaseGraph> T testGraph(T graph) {
         graph.addEdge(0, 1)
              .addEdge(0, 2)
              .addEdge(0, 6);

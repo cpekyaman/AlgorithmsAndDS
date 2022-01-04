@@ -1,6 +1,6 @@
 package algo.graph.search;
 
-import algo.ch11.Graph;
+import algo.graph.BaseGraph;
 import algo.graph.Edge;
 
 import java.util.Collections;
@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 public final class GraphSearchManager {
-    private final Graph graph;
+    private final BaseGraph graph;
     private final Map<Integer, GraphSearch> searches;
     private final SearchCreator sc;
 
-    public GraphSearchManager(Graph graph, SearchCreator sc) {
+    public GraphSearchManager(BaseGraph graph, SearchCreator sc) {
         this.graph = graph;
         this.searches = new HashMap<>();
         this.sc = sc;

@@ -1,7 +1,5 @@
-package algo.ch11;
+package algo.graph;
 
-import algo.graph.Edge;
-import algo.graph.Vertex;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +20,7 @@ class EdgeTest extends Assertions {
     }
 
     @Test
-    void edgesWithReversedVerticesShouldNotBeEqual() {
+    void edgesWithReversedVerticesShouldAlsoBeEqual() {
         // given
         Vertex one = new Vertex(1);
         Vertex two = new Vertex(2);
@@ -32,6 +30,20 @@ class EdgeTest extends Assertions {
         Edge second = new Edge(two, one);
 
         // then
-        assertThat(first).isNotEqualTo(second);
+        assertThat(first).isEqualTo(second);
+    }
+
+    @Test
+    void edgesWithSameVerticesAndDifferentWeightsShouldStillBeEqual() {
+        // given
+        Vertex one = new Vertex(1);
+        Vertex two = new Vertex(2);
+
+        // when
+        Edge first = new Edge(one, two, 1);
+        Edge second = new Edge(one, two, 2);
+
+        // then
+        assertThat(first).isEqualTo(second);
     }
 }

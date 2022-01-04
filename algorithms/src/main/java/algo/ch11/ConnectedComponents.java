@@ -41,7 +41,7 @@ public final class ConnectedComponents {
         componentIds.put(v, componentId);
 
         for(Edge edge : graph.adjacents(v)) {
-            Integer target = edge.getTo().getId();
+            Integer target = edge.getW().getId();
             if(! visited.contains(target)) {
                 dfs(target, componentId);
             }

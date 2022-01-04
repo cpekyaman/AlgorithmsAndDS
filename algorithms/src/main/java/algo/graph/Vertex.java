@@ -21,8 +21,8 @@ public final class Vertex {
         return edges;
     }
 
-    public Vertex addEdge(Vertex to) {
-        this.edges.add(new Edge(this, to));
+    public Vertex addEdge(Edge edge) {
+        this.edges.add(edge);
         return this;
     }
 
