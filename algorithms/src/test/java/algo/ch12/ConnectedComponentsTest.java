@@ -1,4 +1,4 @@
-package algo.ch11;
+package algo.ch12;
 
 import algo.graph.GraphUtil;
 import org.assertj.core.api.Assertions;
