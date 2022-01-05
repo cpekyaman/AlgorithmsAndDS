@@ -3,7 +3,7 @@ package algo.graph;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class EdgeTest extends Assertions {
+class DirectedEdgeTest extends Assertions {
 
     @Test
     void edgesWithSameVerticesShouldBeEqual() {
@@ -12,25 +12,25 @@ class EdgeTest extends Assertions {
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new Edge(one, two);
-        Edge second = new Edge(one, two);
+        Edge first = new DirectedEdge(one, two);
+        Edge second = new DirectedEdge(one, two);
 
         // then
         assertThat(first).isEqualTo(second);
     }
 
     @Test
-    void edgesWithReversedVerticesShouldAlsoBeEqual() {
+    void edgesWithReversedVerticesShouldNotBeEqual() {
         // given
         Vertex one = new Vertex(1);
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new Edge(one, two);
-        Edge second = new Edge(two, one);
+        Edge first = new DirectedEdge(one, two);
+        Edge second = new DirectedEdge(two, one);
 
         // then
-        assertThat(first).isEqualTo(second);
+        assertThat(first).isNotEqualTo(second);
     }
 
     @Test
@@ -40,8 +40,8 @@ class EdgeTest extends Assertions {
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new Edge(one, two, 1);
-        Edge second = new Edge(one, two, 2);
+        Edge first = new DirectedEdge(one, two, 1);
+        Edge second = new DirectedEdge(one, two, 2);
 
         // then
         assertThat(first).isEqualTo(second);

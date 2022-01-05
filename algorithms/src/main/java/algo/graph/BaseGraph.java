@@ -28,7 +28,7 @@ public abstract class BaseGraph {
     }
 
     public Edge edgeOf(Integer v, Integer w) {
-        return new Edge(getOrCreate(v), getOrCreate(w));
+        return newEdge(getOrCreate(v), getOrCreate(w), 1);
     }
 
     public BaseGraph addEdge(Integer v, Integer w) {
@@ -39,10 +39,12 @@ public abstract class BaseGraph {
         Vertex vv = getOrCreate(v);
         Vertex wv = getOrCreate(w);
 
-        Edge edge = new Edge(vv, wv, weight);
+        Edge edge = newEdge(vv, wv, weight);
         edges.add(edge);
         return addEdge(edge);
     }
+
+    protected abstract Edge newEdge(Vertex vv, Vertex wv, int weight);
 
     protected abstract BaseGraph addEdge(Edge edge);
 

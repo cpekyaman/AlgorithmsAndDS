@@ -1,10 +1,11 @@
 package algo.graph;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Vertex {
+public final class Vertex implements Comparable<Vertex> {
     private final Integer id;
     private final List<Edge> edges;
 
@@ -42,5 +43,10 @@ public final class Vertex {
     @Override
     public String toString() {
         return "Vertex(" + id + ')';
+    }
+
+    @Override
+    public int compareTo(Vertex o) {
+        return Comparator.comparingInt(Vertex::getId).compare(this, o);
     }
 }

@@ -1,9 +1,8 @@
 package algo.graph.search;
 
 import algo.ch11.Graph;
-import algo.graph.GraphUtil;
 import algo.graph.Edge;
-import algo.graph.Vertex;
+import algo.graph.GraphUtil;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,10 +27,9 @@ class GraphSearchTest extends Assertions {
         List<Edge> path = gs.path(1, 3);
 
         // then
-        assertThat(path).contains(
-                new Edge(new Vertex(5), new Vertex(3)),
-                new Edge(new Vertex(6), new Vertex(4)),
-                new Edge(new Vertex(0), new Vertex(1)));
+        assertThat(path).contains(graph.edgeOf(5, 3),
+                                  graph.edgeOf(6, 4),
+                                  graph.edgeOf(0, 1));
     }
 
     @Test

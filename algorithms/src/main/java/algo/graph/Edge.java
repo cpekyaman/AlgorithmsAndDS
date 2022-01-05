@@ -1,13 +1,12 @@
 package algo.graph;
 
 import java.util.Comparator;
-import java.util.Objects;
 
-// sort of an undirected edge as edge(a,b) == edge(b,a).
-// directed-ness shall be managed on adjacent lists of vertices.
-public final class Edge implements Comparable<Edge> {
-    private final Vertex V;
-    private final Vertex W;
+// equality of directed vs undirected edge is a little different, that's the main reason we have subclasses here.
+// directed-ness is mainly managed by adjacent lists of vertices.
+public abstract class Edge implements Comparable<Edge> {
+    protected final Vertex V;
+    protected final Vertex W;
     private final int weight;
 
     public Edge(Vertex V, Vertex W) {
@@ -38,20 +37,6 @@ public final class Edge implements Comparable<Edge> {
 
     public Vertex other(Vertex me) {
         return me.equals(V) ? W : V;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Edge edge = (Edge) o;
-        return (V.equals(edge.V) && W.equals(edge.W))
-                || (V.equals(edge.W) && W.equals(edge.V));
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(V, W);
     }
 
     @Override
