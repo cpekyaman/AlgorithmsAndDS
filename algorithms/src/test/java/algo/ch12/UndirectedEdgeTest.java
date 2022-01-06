@@ -1,9 +1,11 @@
-package algo.graph;
+package algo.ch12;
 
+import algo.graph.Edge;
+import algo.graph.Vertex;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class DirectedEdgeTest extends Assertions {
+class UndirectedEdgeTest extends Assertions {
 
     @Test
     void edgesWithSameVerticesShouldBeEqual() {
@@ -12,25 +14,25 @@ class DirectedEdgeTest extends Assertions {
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new DirectedEdge(one, two);
-        Edge second = new DirectedEdge(one, two);
+        Edge first = new UndirectedEdge(one, two);
+        Edge second = new UndirectedEdge(one, two);
 
         // then
         assertThat(first).isEqualTo(second);
     }
 
     @Test
-    void edgesWithReversedVerticesShouldNotBeEqual() {
+    void edgesWithReversedVerticesShouldAlsoBeEqual() {
         // given
         Vertex one = new Vertex(1);
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new DirectedEdge(one, two);
-        Edge second = new DirectedEdge(two, one);
+        Edge first = new UndirectedEdge(one, two);
+        Edge second = new UndirectedEdge(two, one);
 
         // then
-        assertThat(first).isNotEqualTo(second);
+        assertThat(first).isEqualTo(second);
     }
 
     @Test
@@ -40,8 +42,8 @@ class DirectedEdgeTest extends Assertions {
         Vertex two = new Vertex(2);
 
         // when
-        Edge first = new DirectedEdge(one, two, 1);
-        Edge second = new DirectedEdge(one, two, 2);
+        Edge first = new UndirectedEdge(one, two, 1);
+        Edge second = new UndirectedEdge(one, two, 2);
 
         // then
         assertThat(first).isEqualTo(second);

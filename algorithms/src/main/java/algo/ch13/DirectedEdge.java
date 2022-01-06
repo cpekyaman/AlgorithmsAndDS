@@ -1,4 +1,7 @@
-package algo.graph;
+package algo.ch13;
+
+import algo.graph.Edge;
+import algo.graph.Vertex;
 
 import java.util.Objects;
 
@@ -24,7 +27,7 @@ public final class DirectedEdge extends Edge {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Edge edge = (Edge) o;
+        DirectedEdge edge = (DirectedEdge) o;
         return V.equals(edge.V) && W.equals(edge.W);
     }
 

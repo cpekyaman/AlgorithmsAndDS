@@ -2,7 +2,6 @@ package algo.ch12;
 
 import algo.graph.BaseGraph;
 import algo.graph.Edge;
-import algo.graph.UndirectedEdge;
 import algo.graph.Vertex;
 
 public final class Graph extends BaseGraph {
