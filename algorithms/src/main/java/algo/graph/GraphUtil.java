@@ -1,6 +1,6 @@
 package algo.graph;
 
-import algo.ch12.Digraph;
+import algo.ch13.Digraph;
 
 public final class GraphUtil {
 
@@ -55,6 +55,29 @@ public final class GraphUtil {
 
         return graph;
     }
+
+    public static Digraph directedTestGraph() {
+        Digraph graph = new Digraph();
+
+        graph.addEdge(0, 1)
+             .addEdge(0, 2)
+             .addEdge(0, 5);
+
+        graph.addEdge(1, 4);
+
+        graph.addEdge(3, 6)
+             .addEdge(3, 5)
+             .addEdge(3, 4)
+             .addEdge(3, 2);
+
+        graph.addEdge(5, 2);
+
+        graph.addEdge(6, 4)
+             .addEdge(6, 0);
+
+        return graph;
+    }
+
 
     public static Digraph directedWeightedTestGraph() {
         Digraph graph = new Digraph();
