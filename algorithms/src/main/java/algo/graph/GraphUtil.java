@@ -108,5 +108,34 @@ public final class GraphUtil {
         return graph;
     }
 
+    public static Digraph weightedDAG() {
+        Digraph graph = new Digraph();
+
+        graph.addEdge(0, 1, 5)
+             .addEdge(0, 4, 9)
+             .addEdge(0, 7, 8);
+
+        graph.addEdge(1, 2, 12)
+             .addEdge(1, 3, 15)
+             .addEdge(1, 7, 4);
+
+        graph.addEdge(2, 3, 3)
+             .addEdge(2, 6, 11);
+
+        graph.addEdge(3, 6, 9);
+
+        graph.addEdge(4, 5, 4)
+             .addEdge(4, 6, 20)
+             .addEdge(4, 7, 5);
+
+        graph.addEdge(5, 2, 1)
+             .addEdge(5, 6, 13);
+
+        graph.addEdge(7, 5, 6)
+             .addEdge(7, 2, 7);
+
+        return graph;
+    }
+
     private GraphUtil() {}
 }
