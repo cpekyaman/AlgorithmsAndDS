@@ -29,18 +29,11 @@ public final class DijkstraShortestPathSearch extends ShortestPathSearchImpl {
         }
     }
 
-    private void relax(Edge edge) {
-        Integer wDistance = distances.computeIfAbsent(edge.getW().getId(), w -> Integer.MAX_VALUE);
-        // no need for computeIfAbsent as we move from vertex to vertex by calculating distance
-        int vDistance = distances.get(edge.getV().getId()) + edge.getWeight();
-
-        if(wDistance > vDistance) {
-            edges.put(edge.getW().getId(), edge);
-            distances.put(edge.getW().getId(), vDistance);
-            VertexDistance wd = new VertexDistance(edge.getW().getId(), vDistance);
-            queue.remove(wd);
-            queue.offer(wd);
-        }
+    @Override
+    protected void relaxEdgeUpdate(Edge edge, int newDistance) {
+        VertexDistance wd = new VertexDistance(edge.getW().getId(), newDistance);
+        queue.remove(wd);
+        queue.offer(wd);
     }
 
     // equals / hashCode only consider vertexId to make it easy to manage removal of items

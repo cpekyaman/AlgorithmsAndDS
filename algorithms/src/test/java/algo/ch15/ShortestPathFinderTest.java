@@ -35,4 +35,14 @@ class ShortestPathFinderTest extends Assertions {
                                             graph.edgeOf(4, 5),
                                             graph.edgeOf(5, 2));
     }
+
+    @Test
+    void shouldBeAbleToFindShortestPathInANegativeEdgeGraph() {
+        // given
+        Digraph graph = GraphUtil.negativeWeightedDirectedGraph();
+        ShortestPathFinder spf = new ShortestPathFinder(graph, BellmanFordShortestPathSearch::new);
+
+        // when / then
+        assertThat(spf.hasPath(0, 3)).isTrue();
+    }
 }

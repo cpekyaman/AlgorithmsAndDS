@@ -36,4 +36,18 @@ abstract class ShortestPathSearchImpl implements ShortestPathSearch {
     public boolean hasPathTo(Integer to) {
         return distances.get(to) < Integer.MAX_VALUE;
     }
+
+    protected void relax(Edge edge) {
+        Integer wDistance = distances.computeIfAbsent(edge.getW().getId(), w -> Integer.MAX_VALUE);
+        // no need for computeIfAbsent as we move from vertex to vertex by calculating distance
+        int vDistance = distances.get(edge.getV().getId()) + edge.getWeight();
+
+        if(wDistance > vDistance) {
+            edges.put(edge.getW().getId(), edge);
+            distances.put(edge.getW().getId(), vDistance);
+            relaxEdgeUpdate(edge, vDistance);
+        }
+    }
+
+    protected abstract void relaxEdgeUpdate(Edge edge, int newDistance);
 }

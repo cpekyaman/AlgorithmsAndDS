@@ -22,14 +22,8 @@ public final class AcyclicShortestPathSearch extends ShortestPathSearchImpl {
         }
     }
 
-    private void relax(Edge edge) {
-        Integer wDistance = distances.computeIfAbsent(edge.getW().getId(), w -> Integer.MAX_VALUE);
-        // no need for computeIfAbsent as we move from vertex to vertex by calculating distance
-        int vDistance = distances.get(edge.getV().getId()) + edge.getWeight();
-
-        if(wDistance > vDistance) {
-            edges.put(edge.getW().getId(), edge);
-            distances.put(edge.getW().getId(), vDistance);
-        }
+    @Override
+    protected void relaxEdgeUpdate(Edge edge, int newDistance) {
+        // do nothing
     }
 }

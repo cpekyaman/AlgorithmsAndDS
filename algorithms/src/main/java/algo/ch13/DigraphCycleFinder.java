@@ -40,6 +40,7 @@ public final class DigraphCycleFinder {
             if(! visited.contains(w)) {
                 dfs(w);
             } else if(onStack.contains(w)) {
+                //TODO: book also tracks the edges on cycle and verifies
                 hasCycle = true;
                 break;
             }
