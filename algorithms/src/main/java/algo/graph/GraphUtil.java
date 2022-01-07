@@ -1,6 +1,7 @@
 package algo.graph;
 
 import algo.ch13.Digraph;
+import algo.ch16.FlowGraph;
 
 public final class GraphUtil {
 
@@ -133,6 +134,34 @@ public final class GraphUtil {
 
         graph.addEdge(7, 5, 6)
              .addEdge(7, 2, 7);
+
+        return graph;
+    }
+
+    public static FlowGraph testFlowGraph() {
+        FlowGraph graph = new FlowGraph();
+
+        graph.addEdge(0, 1, 10)
+             .addEdge(0, 2, 5)
+             .addEdge(0, 3, 15);
+
+        graph.addEdge(1, 2, 4)
+             .addEdge(1, 4, 9)
+             .addEdge(1, 5, 15);
+
+        graph.addEdge(2, 3, 4)
+             .addEdge(2, 5, 8);
+
+        graph.addEdge(3, 6, 16);
+
+        graph.addEdge(4, 5, 15)
+             .addEdge(4, 7, 10);
+
+        graph.addEdge(5, 6, 15)
+             .addEdge(5, 7, 10);
+
+        graph.addEdge(6, 2, 6)
+             .addEdge(6, 7, 10);
 
         return graph;
     }

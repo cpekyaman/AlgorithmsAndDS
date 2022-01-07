@@ -7,7 +7,7 @@ import java.util.Comparator;
 public abstract class Edge implements Comparable<Edge> {
     protected final Vertex V;
     protected final Vertex W;
-    private final int weight;
+    protected final int weight;
 
     public Edge(Vertex V, Vertex W) {
         this(V, W, 1);
